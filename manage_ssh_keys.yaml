@@ -1,0 +1,4 @@
+---
+- hosts: common
+  roles:
+    - manage_ssh_keys

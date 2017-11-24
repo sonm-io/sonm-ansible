@@ -1,0 +1,29 @@
+# set up common packages
+---
+
+- name: Install ru_RU.UTF-8 locale
+  become: true
+  locale_gen: name=ru_RU.UTF-8 state=present
+
+- name: Install en_US.UTF-8 locale
+  become: true
+  locale_gen: name=en_US.UTF-8 state=present
+
+- name: Update apt cache
+  become: true
+  apt:  update_cache=yes
+
+- name: Install common staff
+  become: true
+  apt: name={{ item }}
+  with_items:
+    - htop
+    - mc
+    - rsync
+    - sudo
+    - git-core
+    - zip
+    - unzip
+    - ca-certificates
+    - screen
+    - curl

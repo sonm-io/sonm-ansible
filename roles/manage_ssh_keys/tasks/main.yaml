@@ -1,0 +1,12 @@
+---
+- name: add sshaman1101's ssh-key
+  authorized_key:
+    user: developer
+    state: present
+    key: "{{ lookup('file', 'ssh_keys/sshaman1101.pub') }}"
+
+- name: add Evgeny Safronov's ssh-key
+  authorized_key:
+    user: developer
+    state: present
+    key: "{{ lookup('file', 'ssh_keys/3Hren.pub') }}"
