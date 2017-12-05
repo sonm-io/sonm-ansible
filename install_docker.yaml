@@ -1,0 +1,4 @@
+- name: Run spk.docker-debian
+  hosts: with_docker
+  roles:
+    - spk.docker-debian

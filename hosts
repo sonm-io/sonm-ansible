@@ -14,3 +14,13 @@ sonm-vm-worker-1-0 ansible_host=46.148.198.134 ansible_port=15935 ansible_user=d
 sonm-vm-worker-1-1 ansible_host=46.148.198.134 ansible_port=15934 ansible_user=developer
 sonm-vm-worker-1-2 ansible_host=46.148.198.134 ansible_port=15923 ansible_user=developer
 sonm-vm-worker-1-3 ansible_host=46.148.198.134 ansible_port=15931 ansible_user=developer
+
+
+[with_docker]
+sonm-vm-worker-0-0 ansible_host=46.148.198.134 ansible_port=15933 ansible_user=developer
+sonm-vm-worker-0-1 ansible_host=46.148.198.134 ansible_port=15922 ansible_user=developer
+sonm-vm-worker-1-0 ansible_host=46.148.198.134 ansible_port=15935 ansible_user=developer
+sonm-vm-worker-1-1 ansible_host=46.148.198.134 ansible_port=15934 ansible_user=developer
+sonm-vm-worker-1-2 ansible_host=46.148.198.134 ansible_port=15923 ansible_user=developer
+sonm-vm-worker-1-3 ansible_host=46.148.198.134 ansible_port=15931 ansible_user=developer
+
