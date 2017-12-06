@@ -1,0 +1,6 @@
+# ansible stuff
+*.retry
+
+# vagrant stuff
+*-console.log
+.vagrant
