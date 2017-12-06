@@ -1,0 +1,4 @@
+- name: Restart Node
+  service:
+    name: 'sonm-node'
+    state: 'restarted'

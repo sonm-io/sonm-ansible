@@ -1,0 +1,4 @@
+node_listen_add: "127.0.0.1:9999"
+
+# define this to be able to interact with hub
+# node_hub_addr: "127.0.0.1:100001"

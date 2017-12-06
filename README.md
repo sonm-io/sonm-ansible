@@ -15,8 +15,8 @@ TODO:
 
 - [ ] deliver the SONM Network components
     - [x] Hub
-    - [ ] Worker
-    - [ ] Client's Node
+    - [x] Worker
+    - [x] Client's Node
     - [ ] Locator
     - [ ] Marketplace
 

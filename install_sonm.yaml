@@ -12,9 +12,11 @@
   roles:
     - ansible-docker
 
-- name: SONM Hub
+- name: Install SONM
   # todo: replace with 'hubs' after tests
   hosts: vagrant
   become: true
   roles:
     - sonm-hub
+    - sonm-worker
+    - sonm-client
