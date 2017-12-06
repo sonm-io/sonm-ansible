@@ -17,6 +17,8 @@
   hosts: vagrant
   become: true
   roles:
+    - sonm-locator
+    - sonm-market
     - sonm-hub
     - sonm-worker
     - sonm-client

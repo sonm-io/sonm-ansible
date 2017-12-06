@@ -1,0 +1,4 @@
+locator_endpoint: "0.0.0.0:9090"
+
+locator_node_ttl: "15m"
+locator_cleanup_period: "5m"

@@ -1,0 +1,18 @@
+- name: Download and install Locator
+  apt:
+    force: yes
+    deb: 'http://sonm-deb.home.nikonov.tech/sonm-locator_0.2.1_amd64.deb'
+
+- name: Update Locator config
+  template:
+    src=templates/locator.yaml.j2
+    dest=/etc/sonm/locator-default.yaml
+    owner=root
+    group=root
+    mode=0644
+    force=yes
+
+- name: Reload systemd daemon
+  command: 'systemctl daemon-reload'
+  notify:
+    - Restart Locator
