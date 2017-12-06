@@ -1,4 +1,13 @@
-- name: Run spk.docker-debian
-  hosts: with_docker
+- name: Set-up hosts
+  # todo: replace to 'common' after tests
+  hosts: vagrant
   roles:
-    - spk.docker-debian
+    - common
+    - manage_ssh_keys
+
+- name: Install docker
+  # todo: replace to 'workers' after tests
+  hosts: vagrant
+  become: true
+  roles:
+    - ansible-docker
