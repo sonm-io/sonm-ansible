@@ -1,0 +1,15 @@
+# Hub defaults
+hub_client_endpoint: ":10001"
+hub_worker_endpoint: ":10002"
+
+hub_cluster_failover: false
+hub_cluster_engine: "boltdb"
+hub_cluster_endpoint: "/tmp/sonm/boltdb"
+
+hub_ipvs_enabled: false
+hub_ipvs_ports_lo: 32768
+hub_ipvs_ports_hi: 33768
+
+# define it if you want to use secure connection to cluster
+# hub_cluster_key_file: "/path/to/key.key"
+# hub_cluster_cert_file: "/path/to/cert.crt"

@@ -1,13 +1,20 @@
 - name: Set-up hosts
-  # todo: replace to 'common' after tests
+  # todo: replace with 'common' after tests
   hosts: vagrant
   roles:
     - common
     - manage_ssh_keys
 
 - name: Install docker
-  # todo: replace to 'workers' after tests
+  # todo: replace with 'workers' after tests
   hosts: vagrant
   become: true
   roles:
     - ansible-docker
+
+- name: SONM Hub
+  # todo: replace with 'hubs' after tests
+  hosts: vagrant
+  become: true
+  roles:
+    - sonm-hub
