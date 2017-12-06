@@ -1,0 +1,12 @@
+# Do you want to install Community Edition ('ce') or Enterprise Edition ('ee')?
+docker_edition: 'ce'
+
+# Do you want to install Docker through the 'stable' or 'edge' channel?
+# Stable gets updated every quarter and Edge gets updated every month.
+docker_channel: 'edge'
+
+# What version of Docker do you want to install?
+docker_version: '17.05.0'
+
+# Optionally install a specific version of Docker Compose.
+docker_install_docker_compose: False
