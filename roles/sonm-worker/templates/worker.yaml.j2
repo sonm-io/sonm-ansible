@@ -1,0 +1,38 @@
+hub:
+  endpoint: "{{ worker_hub_addr }}"
+
+  # Resources section is available only on Linux
+  # If configured, all tasks will share this pool of resources.
+  #resources:
+  #  cgroup: insonmnia
+  #  resources:
+  #    # https://github.com/opencontainers/runtime-spec/blob/master/config-linux.md#memory
+  #    memory: { limit: 1000 }
+  #    # https://github.com/opencontainers/runtime-spec/blob/master/config-linux.md#cpu
+  #    cpu: {quota: 1024 cpus: "2-3" }
+  #    # https://github.com/opencontainers/runtime-spec/blob/master/config-linux.md#network
+  #    network: { classID: 1048577 }
+
+logging:
+  level: -1
+
+{% if worker_stun_server is defined and worker_stun_server %}
+firewall:
+  server: "{{ worker_stun_server }}"
+{% endif %}
+
+{% if public_ip_addrs is defined and public_ip_addrs %}
+{# todo: render it as array #}
+public_ip_addrs: ["{{ public_ip_addrs }}"]
+{% endif %}
+
+{% if worker_gpu_enabled is defined and worker_gpu_enabled %}
+GPUConfig:
+  type: "{{ worker_gpu_type }}"
+  args: "{{ worker_gpu_args }}"
+{% endif %}
+
+ethereum:
+  key_store: "{{ sonm_keystore_path }}"
+  pass_phrase: "{{ sonm_keystore_passphrese }}"
+
