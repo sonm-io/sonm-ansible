@@ -4,6 +4,13 @@ sonm-ansible
 This repo contains a bunch of an ansible scenarios to
 deploy the components of the SONM network.
 
+Testing scenarios:
+
+- [x] Deploy all parts to the one machine
+- [ ] Deploy each part to a different machines
+- [ ] Deploy multiple Hubs with cluster enabled (let's google for a consul role for the ansible)
+- [ ] Deploy multiple Workers for the one Hub
+
 
 TODO:
 
@@ -13,12 +20,12 @@ TODO:
     - [x] install common stuff (htop, mc, git, etc)
     - [x] install runtime dependencies (docker, ipvs, stun-server, etc) 
 
-- [ ] deliver the SONM Network components
+- [x] deliver the SONM Network components
     - [x] Hub
     - [x] Worker
     - [x] Client's Node
-    - [ ] Locator
-    - [ ] Marketplace
+    - [x] Locator
+    - [x] Marketplace
 
 Extra role to preparing build env:
 - [ ] install the following packages:
