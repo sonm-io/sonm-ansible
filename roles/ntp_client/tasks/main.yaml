@@ -1,10 +1,8 @@
-- name: Update apt cache
-  become: yes
-  apt:  update_cache=yes
-
 - name: Install NTP client
   become: yes
-  apt: name=ntpdate
+  apt:
+    name: ntpdate
+    update_cache: True
 
 - name: Add ntpdate into cron
   become: yes

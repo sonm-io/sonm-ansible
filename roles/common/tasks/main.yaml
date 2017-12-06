@@ -9,13 +9,12 @@
   become: true
   locale_gen: name=en_US.UTF-8 state=present
 
-- name: Update apt cache
-  become: true
-  apt:  update_cache=yes
-
 - name: Install common staff
   become: true
-  apt: name={{ item }}
+  apt:
+    name: "{{ item }}"
+    state: 'present'
+    update_cache: True
   with_items:
     - python-apt
     - htop
