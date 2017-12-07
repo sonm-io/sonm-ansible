@@ -1,8 +1,11 @@
 [common]
 gce-sonm-locator-marker
 gce-sonm-hub
-gce-sonm-worker
 gce-sonm-client
+gce-sonm-worker
+gce-sonm-worker-2
+gce-sonm-worker-3
+gce-sonm-worker-4
 
 
 [hubs]
@@ -10,6 +13,9 @@ gce-sonm-hub
 
 [workers]
 gce-sonm-worker
+gce-sonm-worker-2
+gce-sonm-worker-3
+gce-sonm-worker-4
 
 [client]
 gce-sonm-client

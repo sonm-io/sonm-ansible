@@ -7,9 +7,9 @@ deploy the components of the SONM network.
 Testing scenarios:
 
 - [x] Deploy all parts to the one machine
-- [ ] Deploy each part to a different machines
+- [x] Deploy each part to a different machines
+- [x] Deploy multiple Workers for the one Hub
 - [ ] Deploy multiple Hubs with cluster enabled (let's google for a consul role for the ansible)
-- [ ] Deploy multiple Workers for the one Hub
 
 
 TODO:
@@ -26,6 +26,7 @@ TODO:
     - [x] Client's Node
     - [x] Locator
     - [x] Marketplace
+    - [x] Eth keys
 
 Extra role to preparing build env:
 - [ ] install the following packages:
