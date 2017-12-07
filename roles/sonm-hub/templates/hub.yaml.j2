@@ -1,4 +1,4 @@
-endpoint: {{ hub_worker_endpoint }}
+endpoint: "{{ hub_worker_endpoint }}"
 
 {% if hub_ipvs_enabled %}
 gateway:
@@ -6,9 +6,9 @@ gateway:
 {% endif %}
 
 cluster:
-  endpoint: {{ hub_client_endpoint }}
+  endpoint: "{{ hub_client_endpoint }}"
 
-  failover: {{ hub_cluster_failover }}
+  failover: "{{ hub_cluster_failover }}"
 
   store:
     type: "boltdb"
@@ -16,8 +16,8 @@ cluster:
     bucket: "sonm"
 
     {% if hub_cluster_key_file is defined or hub_cluster_cert_file is defined %}
-    key_file: {{ hub_cluster_key_file }}
-    cert_file: {{ hub_cluster_cert_file }}
+    key_file: "{{ hub_cluster_key_file }}"
+    cert_file: "{{ hub_cluster_cert_file }}"
     {% endif %}
 
   leader_key: "sonm/hub/leader"

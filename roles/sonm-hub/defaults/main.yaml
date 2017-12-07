@@ -1,6 +1,6 @@
 # Hub defaults
-hub_client_endpoint: ":10001"
-hub_worker_endpoint: ":10002"
+hub_client_endpoint: "0.0.0.0:10001"
+hub_worker_endpoint: "0.0.0.0:10002"
 
 hub_cluster_failover: false
 hub_cluster_engine: "boltdb"

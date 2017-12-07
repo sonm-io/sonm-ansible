@@ -1,17 +1,21 @@
 [common]
-gce-sonm-all-in-one
+gce-sonm-locator-marker
+gce-sonm-hub
+gce-sonm-worker
+gce-sonm-client
+
 
 [hubs]
-gce-sonm-all-in-one
+gce-sonm-hub
 
 [workers]
-gce-sonm-all-in-one
+gce-sonm-worker
 
 [client]
-gce-sonm-all-in-one
+gce-sonm-client
 
 [locator]
-gce-sonm-all-in-one
+gce-sonm-locator-marker
 
 [market]
-gce-sonm-all-in-one
+gce-sonm-locator-marker
