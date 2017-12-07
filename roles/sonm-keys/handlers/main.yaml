@@ -1,0 +1,4 @@
+- name: Copy Eth keys
+  copy:
+    src: '{{ sonm_keystore_local }}'
+    dest: '{{ sonm_keystore_path }}'

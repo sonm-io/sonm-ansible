@@ -2,28 +2,33 @@
   hosts: locator
   become: true
   roles:
+    - sonm-keys
     - sonm-locator
 
 - name: (Re)Install SONM Marker
   hosts: market
   become: true
   roles:
+    - sonm-keys
     - sonm-market
 
 - name: (Re)Install SONM Hubs
   hosts: hubs
   become: true
   roles:
+    - sonm-keys
     - sonm-hub
 
 - name: (Re)Install SONM Workers
   hosts: workers
   become: true
   roles:
+    - sonm-keys
     - sonm-worker
 
 - name: (Re)Install SONM Client
   hosts: client
   become: true
   roles:
+    - sonm-keys
     - sonm-client

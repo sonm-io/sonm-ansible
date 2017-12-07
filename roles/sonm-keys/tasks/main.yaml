@@ -1,0 +1,5 @@
+- name: Show keys path
+  debug:
+    msg: "copy eth keys from {{ sonm_keystore_local }} to {{ sonm_keystore_path }}"
+  notify:
+    - Copy Eth keys

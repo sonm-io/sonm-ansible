@@ -1,0 +1,2 @@
+# key to deploy to remote machine
+sonm_keystore_local: "my-eth-key.json"

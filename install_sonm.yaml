@@ -8,18 +8,21 @@
   hosts: locator
   become: true
   roles:
+    - sonm-keys
     - sonm-locator
 
 - name: Install SONM Marker
   hosts: market
   become: true
   roles:
+    - sonm-keys
     - sonm-market
 
 - name: Install SONM Hubs
   hosts: hubs
   become: true
   roles:
+    - sonm-keys
     - sonm-hub
 
 - name: Install SONM Workers
@@ -27,10 +30,12 @@
   become: true
   roles:
     - ansible-docker
+    - sonm-keys
     - sonm-worker
 
 - name: Install SONM Client
   hosts: client
   become: true
   roles:
+    - sonm-keys
     - sonm-client
