@@ -1,5 +1,3 @@
-# todo: rename this to "common.yaml"
-
 # docker install options
 docker_edition: 'ce'
 docker_channel: 'edge'

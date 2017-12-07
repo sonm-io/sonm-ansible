@@ -1,6 +1,7 @@
 - name: Download and install Node and CLI
   apt:
     deb: '{{ item }}'
+    force: yes
   with_items:
     - 'http://sonm-deb.home.nikonov.tech/sonm-node_0.2.1_amd64.deb'
     - 'http://sonm-deb.home.nikonov.tech/sonm-cli_0.2.1_amd64.deb'
