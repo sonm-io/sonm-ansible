@@ -1,0 +1,5 @@
+ansible_host: 172.16.1.227
+ansible_port: 2728
+ansible_user: developer
+
+node_hub_addr: "172.16.1.225:10001"

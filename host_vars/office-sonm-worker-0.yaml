@@ -1,0 +1,5 @@
+ansible_host: 172.16.1.229
+ansible_port: 2728
+ansible_user: developer
+
+worker_hub_addr: "7019bbf7fb8d51f9b71e82a878e1d9fd80c5421f@172.16.1.225:10002"
