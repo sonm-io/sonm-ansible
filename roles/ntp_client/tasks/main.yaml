@@ -1,9 +1,0 @@
-- name: Install NTP client
-  become: yes
-  apt:
-    name: ntpdate
-    update_cache: True
-
-- name: Add ntpdate into cron
-  become: yes
-  cron: hour="6" minute="29" name="ntp_daily_update" job="/usr/sbin/ntpdate -bs 0.debian.pool.ntp.org"
