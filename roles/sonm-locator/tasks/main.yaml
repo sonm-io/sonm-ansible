@@ -7,6 +7,7 @@
   template:
     src=templates/locator.yaml.j2
     dest=/etc/sonm/locator-default.yaml
+    backup=true
     owner=root
     group=root
     mode=0644

@@ -10,6 +10,7 @@
   template:
     src=templates/node.yaml.j2
     dest=/etc/sonm/node-default.yaml
+    backup=true
     owner=root
     group=root
     mode=0644
