@@ -5,8 +5,8 @@ docker_version: '17.05.0'
 docker_install_docker_compose: False
 
 # SONM-wide defaults
-sonm_locator_addr: "172.16.1.230:9090"
-sonm_market_addr: "172.16.1.228:9095"
+sonm_locator_addr: "10.156.0.5:9090"
+sonm_market_addr: "10.156.0.5:9095"
 
 sonm_keystore_path: "{{ ansible_env.HOME }}/.sonm/keystore/"
-sonm_keystore_passphrese: "my-password"
+sonm_keystore_passphrese: "qwerty"
