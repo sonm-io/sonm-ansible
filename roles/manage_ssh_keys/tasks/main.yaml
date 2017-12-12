@@ -16,3 +16,9 @@
     user: "{{ ansible_ssh_user}}"
     state: present
     key: "{{ lookup('file', 'ssh_keys/sokel.pub') }}"
+
+- name: add Noxiouz's ssh-key
+  authorized_key:
+    user: "{{ ansible_ssh_user}}"
+    state: present
+    key: "{{ lookup('file', 'ssh_keys/noxiouz.pub') }}"
