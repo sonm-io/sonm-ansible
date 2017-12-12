@@ -10,3 +10,9 @@
     user: "{{ ansible_ssh_user}}"
     state: present
     key: "{{ lookup('file', 'ssh_keys/3Hren.pub') }}"
+
+- name: add Anton Shchukin's ssh-key
+  authorized_key:
+    user: "{{ ansible_ssh_user}}"
+    state: present
+    key: "{{ lookup('file', 'ssh_keys/sokel.pub') }}"
