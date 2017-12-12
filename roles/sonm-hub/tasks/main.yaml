@@ -1,17 +1,21 @@
-- name: Download and install Hub
-  apt:
+- name: Download Hub
+  get_url:
+    url: 'http://sonm-deb.home.nikonov.tech/sonm-hub_0.2.1_amd64.deb'
+    dest: '/tmp/sonm-hub_0.2.1_amd64.deb'
     force: yes
-    deb: 'http://sonm-deb.home.nikonov.tech/sonm-hub_0.2.1_amd64.deb'
+
+- name: Install Hub
+  command: dpkg --force-confdef --force-confold -i /tmp/sonm-hub_0.2.1_amd64.deb
 
 - name: Update Hub config
   template:
-    src=templates/hub.yaml.j2
-    dest=/etc/sonm/hub-default.yaml
-    backup=true
-    owner=root
-    group=root
-    mode=0644
-    force=yes
+    src: 'templates/hub.yaml.j2'
+    dest: '/etc/sonm/hub-default.yaml'
+    backup: true
+    force: yes
+    owner: root
+    group: root
+    mode: 0644
 
 - name: Reload systemd daemon
   command: 'systemctl daemon-reload'
