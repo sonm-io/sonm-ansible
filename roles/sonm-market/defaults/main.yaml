@@ -1,1 +1,2 @@
 market_endpoint: "0.0.0.0:9095"
+market_data_dir: "/etc/sonm"
