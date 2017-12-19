@@ -22,6 +22,7 @@
   hosts: hubs
   become: true
   roles:
+    - ansible-docker
     - sonm-keys
     - sonm-hub
 
