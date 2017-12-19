@@ -4,6 +4,12 @@ sonm-ansible
 This repo contains a bunch of an ansible scenarios to
 deploy the components of the SONM network.
 
+Note! Config updates are disabled by default. To enable it, you must pass the `update_config` variable and set it to True; It is reachable via `extra vars`, for example:
+
+```
+ansible-playbook -i hosts_office --extra-vars "update_config=true" update_sonm.yaml
+```
+
 Testing scenarios:
 
 - [x] Deploy all parts to the one machine
