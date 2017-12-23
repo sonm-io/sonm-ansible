@@ -1,5 +1,5 @@
-ansible_host: 35.198.129.4
+ansible_host: 35.198.76.245
 ansible_user: alex
 ansible_ssh_private_key_file: ".keys/sshamna1101_gce"
 
-worker_hub_addr: "0x32e9935A016f64ea7c1Cd251beA105Fb5A36505A@10.156.0.4:10002"
+worker_hub_addr: "0x32e9935A016f64ea7c1Cd251beA105Fb5A36505A@10.156.0.3:10002"
