@@ -1,0 +1,10 @@
+
+[common]
+do-mvp-locator
+do-mvp-market
+
+[locator]
+do-mvp-locator
+
+[market]
+do-mvp-market
