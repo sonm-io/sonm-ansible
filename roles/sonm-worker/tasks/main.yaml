@@ -1,11 +1,11 @@
 - name: Download Worker
   get_url:
-    url: 'http://sonm-deb.home.nikonov.tech/sonm-miner_0.2.1_amd64.deb'
-    dest: '/tmp/sonm-miner_0.2.1_amd64.deb'
+    url: 'http://sonm-deb.home.nikonov.tech/sonm-worker_0.3_amd64.deb'
+    dest: '/tmp/sonm-worker_0.3_amd64.deb'
     force: yes
 
 - name: Install Worker
-  command: dpkg --force-confdef --force-confold -i /tmp/sonm-miner_0.2.1_amd64.deb
+  command: dpkg --force-confdef --force-confold -i /tmp/sonm-worker_0.3_amd64.deb
 
 - name: Update Worker config
   when: update_config is defined and update_config

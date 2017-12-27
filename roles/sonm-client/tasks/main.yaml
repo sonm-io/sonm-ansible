@@ -1,20 +1,20 @@
 - name: Download Node
   get_url:
-    url: 'http://sonm-deb.home.nikonov.tech/sonm-node_0.2.1_amd64.deb'
-    dest: '/tmp/sonm-node_0.2.1_amd64.deb'
+    url: 'http://sonm-deb.home.nikonov.tech/sonm-node_0.3_amd64.deb'
+    dest: '/tmp/sonm-node_0.3_amd64.deb'
     force: yes
 
 - name: Download CLI
   get_url:
-    url: 'http://sonm-deb.home.nikonov.tech/sonm-cli_0.2.1_amd64.deb'
-    dest: '/tmp/sonm-cli_0.2.1_amd64.deb'
+    url: 'http://sonm-deb.home.nikonov.tech/sonm-cli_0.3_amd64.deb'
+    dest: '/tmp/sonm-cli_0.3_amd64.deb'
     force: yes
 
 - name: Install Node
-  command: dpkg --force-confdef --force-confold -i /tmp/sonm-node_0.2.1_amd64.deb
+  command: dpkg --force-confdef --force-confold -i /tmp/sonm-node_0.3_amd64.deb
 
 - name: Install CLI
-  command: dpkg --force-confdef --force-confold -i /tmp/sonm-cli_0.2.1_amd64.deb
+  command: dpkg --force-confdef --force-confold -i /tmp/sonm-cli_0.3_amd64.deb
 
 - name: Update Node config
   when: update_config is defined and update_config

@@ -1,11 +1,11 @@
 - name: Download Locator
   get_url:
-    url: 'http://sonm-deb.home.nikonov.tech/sonm-locator_0.2.1_amd64.deb'
-    dest: '/tmp/sonm-locator_0.2.1_amd64.deb'
+    url: 'http://sonm-deb.home.nikonov.tech/sonm-locator_0.3_amd64.deb'
+    dest: '/tmp/sonm-locator_0.3_amd64.deb'
     force: yes
 
 - name: Install Locator
-  command: dpkg --force-confdef --force-confold -i /tmp/sonm-locator_0.2.1_amd64.deb
+  command: dpkg --force-confdef --force-confold -i /tmp/sonm-locator_0.3_amd64.deb
 
 - name: Update Locator config
   when: update_config is defined and update_config

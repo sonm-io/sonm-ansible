@@ -1,11 +1,11 @@
 - name: Download Marketplace
   get_url:
-    url: 'http://sonm-deb.home.nikonov.tech/sonm-marketplace_1.2.0_amd64.deb'
-    dest: '/tmp/sonm-marketplace_1.2.0_amd64.deb'
+    url: 'http://sonm-deb.home.nikonov.tech/sonm-marketplace_0.3_amd64.deb'
+    dest: '/tmp/sonm-marketplace_0.3_amd64.deb'
     force: yes
 
 - name: Install Marketplace
-  command: dpkg --force-confdef --force-confold -i /tmp/sonm-marketplace_1.2.0_amd64.deb
+  command: dpkg --force-confdef --force-confold -i /tmp/sonm-marketplace_0.3_amd64.deb
 
 - name: Update Marketplace config
   when: update_config is defined and update_config
