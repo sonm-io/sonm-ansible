@@ -1,11 +1,5 @@
-- name: Download Hub
-  get_url:
-    url: 'http://sonm-deb.home.nikonov.tech/sonm-hub_0.3_amd64.deb'
-    dest: '/tmp/sonm-hub_0.3_amd64.deb'
-    force: yes
-
-- name: Install Hub
-  command: dpkg --force-confdef --force-confold -i /tmp/sonm-hub_0.3_amd64.deb
+- name: install Hub
+  apt: cache_valid_time=3600 force=true state=present name=sonm-hub
 
 - name: Update Hub config
   when: update_config is defined and update_config

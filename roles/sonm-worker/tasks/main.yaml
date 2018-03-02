@@ -1,17 +1,11 @@
-- name: Download Worker
-  get_url:
-    url: 'http://sonm-deb.home.nikonov.tech/sonm-worker_0.3_amd64.deb'
-    dest: '/tmp/sonm-worker_0.3_amd64.deb'
-    force: yes
-
-- name: Install Worker
-  command: dpkg --force-confdef --force-confold -i /tmp/sonm-worker_0.3_amd64.deb
+- name: install Worker
+  apt: cache_valid_time=3600 force=true state=present name=sonm-worker
 
 - name: Update Worker config
   when: update_config is defined and update_config
   template:
     src: templates/worker.yaml.j2
-    dest: /etc/sonm/miner-default.yaml
+    dest: /etc/sonm/worker-default.yaml
     backup: true
     force: yes
     owner: root

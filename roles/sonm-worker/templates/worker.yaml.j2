@@ -1,5 +1,10 @@
 hub:
-  endpoint: "{{ worker_hub_addr }}"
+  eth_addr: "{{ worker_hub_conn.eth }}"
+
+  # Either `resolve_endpoints: true` or `endpoints` should be provided. If `resolve_endpoints`
+  # is set to `true`, hub's addresses will be resolved via locator.
+  resolve_endpoints: {{ worker_hub_conn.resolve }}
+  endpoints: ["{{ worker_hub_conn.ip }}",]
 
   # Resources section is available only on Linux
   # If configured, all tasks will share this pool of resources.
@@ -16,20 +21,9 @@ hub:
 logging:
   level: -1
 
-{% if worker_stun_server is defined and worker_stun_server %}
-firewall:
-  server: "{{ worker_stun_server }}"
-{% endif %}
-
 {% if public_ip_addrs is defined and public_ip_addrs %}
 {# todo: render it as array #}
 public_ip_addrs: ["{{ public_ip_addrs }}"]
-{% endif %}
-
-{% if worker_gpu_enabled is defined and worker_gpu_enabled %}
-GPUConfig:
-  type: "{{ worker_gpu_type }}"
-  args: "{{ worker_gpu_args }}"
 {% endif %}
 
 ethereum:
@@ -39,3 +33,21 @@ ethereum:
 locator:
   endpoint: "{{ sonm_locator_addr }}"
 
+plugins:
+  socket_dir: {{ worker_plugins.socket_dir }}
+
+  volume:
+    root: {{ worker_plugins.volume_root }}
+    volumes:
+      {% if worker_plugins.cifs_enabled %}
+      cifs: {}
+      {% endif %}
+
+  gpus:
+    {% if worker_plugins.nvidia_enabled %}
+    nvidia: {}
+    {% endif %}
+
+    {% if worker_plugins.radeon_enabled %}
+    radeon: {}
+    {% endif %}

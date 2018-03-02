@@ -4,43 +4,33 @@ sonm-ansible
 This repo contains a bunch of an ansible scenarios to
 deploy the components of the SONM network.
 
-Note! Config updates are disabled by default. To enable it, you must pass the `update_config` variable and set it to True; It is reachable via `extra vars`, for example:
+Install SONM network components:
+```
+ansible-playbook -i my_hosts install_sonm.yaml
+```
+
+
+Update components to the latest stable version:
+```
+ansible-playbook -i my_hosts install_sonm.yaml
+```
+
+
+Note! Config and keys updates are disabled by default. To enable it, you must pass the `update_config` variable and set it to True; It is reachable via `extra vars`, for example:
 
 ```
-ansible-playbook -i hosts_office --extra-vars "update_config=true" update_sonm.yaml
+ansible-playbook -i hosts_office \
+    --extra-vars "update_config=true update_keys=true" \
+    update_sonm.yaml
 ```
 
-Testing scenarios:
 
-- [x] Deploy all parts to the one machine
-- [x] Deploy each part to a different machines
-- [x] Deploy multiple Workers for the one Hub
-- [ ] Deploy multiple Hubs with cluster enabled (let's google for a consul role for the ansible)
+### Roles included:
 
-
-TODO:
-
-- [x] prepare environment
-    - [x] add ssh-keys
-    - [x] set-up system locales
-    - [x] install common stuff (htop, mc, git, etc)
-    - [x] install runtime dependencies (docker, ipvs, stun-server, etc) 
-
-- [x] deliver the SONM Network components
-    - [x] Hub
-    - [x] Worker
-    - [x] Client's Node
-    - [x] Locator
-    - [x] Marketplace
-    - [x] Eth keys
-
-Extra role to preparing build env:
-- [ ] install the following packages:
-    - git
-    - go1.9
-    - opencl-headers
-    - nvidia-opencl-dev
-    - debhelper
-    - devscripts
-    - dh-systemd
-
+* common: useful stuff, locales, etc
+* ansible-docker: latest docker runtime
+* sonm-pkgcloud: configure SONM packagecloud repo
+* sonm-keys: deploy Ethereum-keys for SONM network components
+* sonm-client: install SONM Node and Cli
+* sonm-hub: install SONM Hub (require Docker installed)
+* sonm-worker: install SONM Worker (require Docker installed)

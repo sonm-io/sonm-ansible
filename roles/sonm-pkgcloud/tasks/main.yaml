@@ -1,0 +1,4 @@
+- name: add SONM PackageCloud repo
+  shell: curl -s {{ sonm_packagecloud_repo_uri }} | bash
+  register: pkgcloug_repo_registred
+  when: pkgcloug_repo_registred is not defined

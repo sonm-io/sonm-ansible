@@ -1,4 +1,4 @@
 - name: Restart Worker
   service:
-    name: 'sonm-miner'
+    name: 'sonm-worker'
     state: 'restarted'

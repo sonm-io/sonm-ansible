@@ -1,42 +1,38 @@
 - name: Set-up hosts
-  hosts: common
+  hosts: vagrant
+  become: true
   roles:
     - common
-    - manage_ssh_keys
-
-- name: Install SONM Locator
-  hosts: locator
-  become: true
-  roles:
-    - sonm-keys
-    - sonm-locator
-
-- name: Install SONM Market
-  hosts: market
-  become: true
-  roles:
-    - sonm-keys
-    - sonm-market
+    - sonm-pkgcloud
 
 - name: Install SONM Hubs
-  hosts: hubs
+  hosts: vagrant
   become: true
+  vars:
+    update_config: true
+    update_keys: true
   roles:
     - ansible-docker
     - sonm-keys
     - sonm-hub
 
 - name: Install SONM Workers
-  hosts: workers
+  hosts: vagrant
   become: true
+  vars:
+    update_config: true
+    update_keys: true
   roles:
     - ansible-docker
     - sonm-keys
     - sonm-worker
 
 - name: Install SONM Client
-  hosts: client
+  hosts: vagrant
   become: true
+  vars:
+    update_config: true
+    update_keys: true
   roles:
     - sonm-keys
     - sonm-client

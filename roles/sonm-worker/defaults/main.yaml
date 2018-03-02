@@ -1,12 +1,15 @@
-worker_hub_addr: "1000000000000000000000000000000000000001@127.0.0.1:10002"
+worker_hub_conn:
+  eth: "deadbeef11010000000000000000000000000002"
+  ip: "127.0.0.1:10002"
+  resolve: false
 
-# define this to forward GPU device assigning to
-worker_gpu_enabled: false
-worker_gpu_type: "nvidiadocker"
-worker_gpu_args: '{ nvidiadockerdriver: "localhost:3476" }'
+worker_plugins:
+  socket_dir: "/run/docker/plugins"
+  volume_root: "/var/lib/docker-volumes"
 
-# define this it use stun server
-# worker_stun_server: "stun.ekiga.net:3478"
+  cifs_enabled: true
+  nvidia_enabled: true
+  radeon_enabled: true
 
 # define this to explicitly announce this IP to locator
-# worker_public_ip_addrs: ["46.148.198.134"]
+worker_public_ip_addrs: ["2.3.4.5"]

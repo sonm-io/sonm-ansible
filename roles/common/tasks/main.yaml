@@ -2,15 +2,12 @@
 ---
 
 - name: Install ru_RU.UTF-8 locale
-  become: true
   locale_gen: name=ru_RU.UTF-8 state=present
 
 - name: Install en_US.UTF-8 locale
-  become: true
   locale_gen: name=en_US.UTF-8 state=present
 
 - name: Install common staff
-  become: true
   apt:
     name: "{{ item }}"
     state: 'present'
