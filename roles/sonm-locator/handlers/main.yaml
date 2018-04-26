@@ -1,4 +1,0 @@
-- name: Restart Locator
-  service:
-    name: 'sonm-locator'
-    state: 'restarted'

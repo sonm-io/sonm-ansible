@@ -1,4 +1,0 @@
-- name: Restart Hub
-  service:
-    name: 'sonm-hub'
-    state: 'restarted'

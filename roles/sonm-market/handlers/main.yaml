@@ -1,4 +1,0 @@
-- name: Restart market
-  service:
-    name: 'sonm-marketplace'
-    state: 'restarted'
