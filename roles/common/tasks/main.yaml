@@ -13,6 +13,7 @@
     state: 'present'
     update_cache: True
   with_items:
+    - software-properties-common
     - python-apt
     - htop
     - mc

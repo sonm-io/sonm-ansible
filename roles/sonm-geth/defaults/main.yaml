@@ -1,0 +1,5 @@
+geth:
+  repo_name: 'ppa:ethereum/ethereum'
+  geth_data_dir: /var/lib/geth/data
+  chain_config_url: https://gist.githubusercontent.com/Sokel/179e41611267b371c26a5961db172f7a/raw/4a2c989cace35b9f3580c105ff20ea8622276fa7/sonm-private-test.json
+  chain_config_path: /var/lib/geth/sonm-private-test.json

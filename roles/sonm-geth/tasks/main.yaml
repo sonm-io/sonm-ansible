@@ -1,0 +1,48 @@
+# install geth node
+---
+
+# https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.8.6-12683fec.tar.gz
+- name: Add PPA repo with actual geth version
+  apt_repository:
+    repo: '{{ geth.repo_name }}'
+    update_cache: yes
+
+- name: Install Geth node
+  apt:
+    cache_valid_time: 3600
+    force: true
+    state: present
+    name: geth
+
+- name: Create geth data dir
+  shell: 'mkdir -p {{ geth.geth_data_dir }}'
+
+- name: Download genesis.json
+  get_url:
+    url: '{{ geth.chain_config_url }}'
+    dest: '{{ geth.chain_config_path }}'
+
+- name: Apply genesis.json
+  shell: 'geth init {{ geth.chain_config_path }} --datadir {{ geth.geth_data_dir }}'
+
+- name: Install geth systemd service
+  template:
+    src: templates/geth.service.j2
+    dest: /etc/systemd/system/geth.service
+    backup: true
+    force: yes
+    owner: root
+    group: root
+    mode: 0644
+
+- name: systemd daemon-reload
+  systemd: daemon_reload=yes
+
+- name: Start geth node
+  systemd: state=started name=geth
+
+- name: Enable service geth and ensure it is not masked
+  systemd:
+    name: geth
+    enabled: yes
+    masked: no
