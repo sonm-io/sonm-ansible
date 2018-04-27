@@ -32,5 +32,5 @@ ansible-playbook -i hosts_office \
 * sonm-pkgcloud: configure SONM packagecloud repo
 * sonm-keys: deploy Ethereum-keys for SONM network components
 * sonm-client: install SONM Node and Cli
-* sonm-hub: install SONM Hub (require Docker installed)
 * sonm-worker: install SONM Worker (require Docker installed)
+* sonm-dwh: install geth-node and DWH (ubuntu-only)
