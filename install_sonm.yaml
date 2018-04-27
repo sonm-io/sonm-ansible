@@ -5,16 +5,12 @@
     - common
     - sonm-pkgcloud
 
-- name: Install SONM Hubs
+- name: Install DWH
   hosts: vagrant
   become: true
-  vars:
-    update_config: true
-    update_keys: true
   roles:
-    - ansible-docker
-    - sonm-keys
-    - sonm-hub
+    - sonm-geth
+    - sonm-dwh
 
 - name: Install SONM Workers
   hosts: vagrant

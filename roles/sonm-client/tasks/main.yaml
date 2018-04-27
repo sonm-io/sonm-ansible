@@ -4,8 +4,13 @@
     - sonm-cli
     - sonm-node
 
+- name: check if Node config exists
+  stat:
+    path: /etc/file.txt
+  register: node_config_file
+
 - name: Update Node config
-  when: update_config is defined and update_config
+  when: update_config is defined and update_config or not node_config_file.stat.exists
   template:
     src: templates/node.yaml.j2
     dest: /etc/sonm/node-default.yaml

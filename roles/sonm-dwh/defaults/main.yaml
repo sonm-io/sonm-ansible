@@ -1,0 +1,14 @@
+# defaults - DWH
+---
+dwh:
+  grpc_endpoint: "127.0.0.1:15050"
+  http_endpoint: "127.0.0.1:15051"
+
+  # or "https://private-dev.sonm.io" to use remote node
+  geth_url: "http://localhost:8545"
+
+  enable_rest: true
+
+  storage:
+    driver: "sqlite3"
+    endpoint: "/var/lib/sonm/dwh.db"

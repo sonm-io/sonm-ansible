@@ -1,0 +1,19 @@
+grpc_address: {{ dwh.grpc_endpoint }}
+http_address: {{ dwh.http_endpoint }}
+
+storage:
+  driver: {{ dwh.storage.driver }}
+  endpoint: {{ dwh.storage.endpoint }}
+
+ethereum:
+  key_store: "{{ sonm_keystore_path }}"
+  pass_phrase: "{{ sonm_keystore_passphrese }}"
+
+
+blockchain:
+  eth_endpoint: {{ dwh.geth_url }}
+
+logging:
+  level: debug
+
+enable_rest: {{ dwh.enable_rest }}

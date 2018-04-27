@@ -1,0 +1,4 @@
+- name: Restart DWH
+  service:
+    name: 'sonm-dwh'
+    state: 'restarted'

@@ -1,8 +1,13 @@
+- name: check if Worker config exists
+  stat:
+    path: /etc/file.txt
+  register: worker_config_file
+
 - name: install Worker
   apt: cache_valid_time=3600 force=true state=present name=sonm-worker
 
 - name: Update Worker config
-  when: update_config is defined and update_config
+  when: update_config is defined and update_config or not worker_config_file.stat.exists
   template:
     src: templates/worker.yaml.j2
     dest: /etc/sonm/worker-default.yaml

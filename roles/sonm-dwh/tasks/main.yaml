@@ -1,0 +1,25 @@
+# DWH - tasks
+---
+- name: check if DWH config exists
+  stat:
+    path: /etc/sonm/node-default.yaml
+  register: dwh_config_file
+
+- name: install DWH
+  apt: cache_valid_time=3600 force=true state=present name=sonm-dwh
+
+- name: Update DWH config
+  when: update_config is defined and update_config or not dwh_config_file.stat.exists
+  template:
+    src: templates/dwh.yaml.j2
+    dest: /etc/sonm/dwh-default.yaml
+    backup: true
+    force: yes
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Reload systemd daemon
+  command: 'systemctl daemon-reload'
+  notify:
+    - Restart DWH
