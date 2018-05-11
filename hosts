@@ -1,20 +1,11 @@
 [common]
-gce-sonm-locator-marker
-gce-sonm-hub
-gce-sonm-client
-gce-sonm-worker
-
-[hubs]
-gce-sonm-hub
 
 [workers]
-gce-sonm-worker
 
-[client]
-gce-sonm-client
+[clients]
 
-[locator]
-gce-sonm-locator-marker
+[dwh]
 
-[market]
-gce-sonm-locator-marker
+[rendezvous]
+
+[relays]
