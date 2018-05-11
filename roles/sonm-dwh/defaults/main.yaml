@@ -4,11 +4,11 @@ dwh:
   grpc_endpoint: "127.0.0.1:15050"
   http_endpoint: "127.0.0.1:15051"
 
-  # or "https://private-dev.sonm.io" to use remote node
+  # or "https://sidechain-dev.sonm.com" to use remote node
   geth_url: "http://localhost:8545"
 
   enable_rest: true
 
   storage:
-    driver: "sqlite3"
-    endpoint: "/var/lib/sonm/dwh.db"
+    driver: "postgres"
+    endpoint: "postgresql://localhost:5432/dwh?user=dwh&password=dwh&sslmode=disable"
