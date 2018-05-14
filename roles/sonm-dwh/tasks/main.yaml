@@ -1,5 +1,52 @@
 # DWH - tasks
 ---
+- name: installing postgresql
+  tags: postgresql
+  apt: {{ items }}
+  with_items:
+    - postgresql-9.5
+    - pgtop
+    - postgresql-contrib
+    - postgresql-libs
+    - python-psycopg2
+    - postgresql-devel
+    - python-pip
+
+- name: install psycopg2 python module
+  tags: postgresql
+  pip: name=psycopg2
+
+- name: configuring PG
+  tags: postgresql
+  copy:
+    src: templates/postgresql.conf.j2
+    dest: /etc/postgresql/9.5/main/postgresql.conf
+    backup: yes
+
+- name: running postgresql service, if not running
+  tags: postgresql
+  service:
+    name: postgresql
+    enabled: yes
+    state: restarted
+
+- name: creating dwh database
+  tags: postgresql
+  become: yes
+  become_user: postgres
+  postgresql_db:
+    name: dwh
+
+- name: creating dwh database user
+  tags: postgresql
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    db: dwh
+    name: dwh
+    password: dwh
+    priv: ALL
+
 - name: check if DWH config exists
   stat:
     path: /etc/sonm/node-default.yaml

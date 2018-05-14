@@ -11,4 +11,7 @@ dwh:
 
   storage:
     driver: "postgres"
-    endpoint: "postgresql://localhost:5432/dwh?user=dwh&password=dwh&sslmode=disable"
+    dwh_user: "dwh"
+    dwh_pass: "dwh"
+    dwh_db: "dwh"
+    endpoint: "postgresql://localhost:5432/{{ dwh_db }}?user={{ dwh_user }}&password={{ dwh_pass }}&sslmode=disable"
