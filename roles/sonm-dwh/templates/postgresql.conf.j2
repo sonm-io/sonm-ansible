@@ -1,0 +1,41 @@
+# DB Version: 9.5
+# OS Type: linux
+# DB Type: dw
+# Total Memory (RAM): 64 GB
+# CPUs num: 10
+# Hard drive type: ssd
+
+max_connections = 20
+shared_buffers = 16GB
+effective_cache_size = 48GB
+maintenance_work_mem = 2GB
+checkpoint_completion_target = 0.9
+wal_buffers = 16MB
+default_statistics_target = 500
+random_page_cost = 1.1
+effective_io_concurrency = 200
+work_mem = 83886kB
+min_wal_size = 4GB
+max_wal_size = 8GB
+max_worker_processes = 10
+
+data_directory = '/var/lib/postgresql/9.5/main'		# use data in another directory
+hba_file = '/etc/postgresql/9.5/main/pg_hba.conf'	# host-based authentication file
+ident_file = '/etc/postgresql/9.5/main/pg_ident.conf'	# ident configuration file
+external_pid_file = '/var/run/postgresql/9.5-main.pid'			# write an extra PID file
+port = 5432				# (change requires restart)
+unix_socket_directories = '/var/run/postgresql'	# comma-separated list of directories
+ssl = true				# (change requires restart)
+ssl_cert_file = '/etc/ssl/certs/ssl-cert-snakeoil.pem'		# (change requires restart)
+ssl_key_file = '/etc/ssl/private/ssl-cert-snakeoil.key'		# (change requires restart)
+dynamic_shared_memory_type = posix	# the default is the first option
+log_line_prefix = '%t [%p-%l] %q%u@%d '			# special values:
+log_timezone = 'localtime'
+stats_temp_directory = '/var/run/postgresql/9.5-main.pg_stat_tmp'
+datestyle = 'iso, mdy'
+timezone = 'localtime'
+lc_messages = 'en_US.UTF-8'			# locale for system error message
+lc_monetary = 'en_US.UTF-8'			# locale for monetary formatting
+lc_numeric = 'en_US.UTF-8'			# locale for number formatting
+lc_time = 'en_US.UTF-8'				# locale for time formatting
+default_text_search_config = 'pg_catalog.english'
