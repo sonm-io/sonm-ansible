@@ -25,3 +25,18 @@
     - ca-certificates
     - screen
     - curl
+    - vim
+    - chrony
+
+- name: Stopping ntpd
+  service:
+    name: ntpd
+    state: stopped
+    enabled: no
+
+- name: Running chrony
+  service:
+    name: chrony
+    state: restarted
+    enabled: yes
+ 
