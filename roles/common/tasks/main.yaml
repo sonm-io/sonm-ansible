@@ -27,6 +27,7 @@
     - curl
     - vim
     - chrony
+    - speedtest-cli
 
 - name: Removing ntpd
   apt:
