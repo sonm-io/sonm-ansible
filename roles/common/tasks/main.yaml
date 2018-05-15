@@ -28,11 +28,10 @@
     - vim
     - chrony
 
-- name: Stopping ntpd
-  service:
+- name: Removing ntpd
+  apt:
     name: ntpd
-    state: stopped
-    enabled: no
+    state: absent
 
 - name: Running chrony
   service:
